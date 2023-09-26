@@ -155,40 +155,40 @@ Code-R - это инновационная школа программирова
       <div class="team-product">
         <div class = 'team-container'>
           <img class = 'team-img' src = {denis}/>
-          <h2>Денис</h2>
-          <h4>Программирование и робототехника</h4>
+          <h2>Тимофей</h2>
+          <h4>Робототехника lego</h4>
         </div>
         
       </div>
       <div class="team-product">
         <div class = 'team-container'>
           <img class = 'team-img' src = {aigul}/>
-          <h2>Айгуль</h2>
-          <h4>Английский и французский</h4>
+          <h2>Максим</h2>
+          <h4>Python и JavaScript</h4>
         </div>
         
       </div>
       <div class="team-product">
         <div class = 'team-container'>
           <img class = 'team-img' src = {ksenia}/>
-          <h2>Ксения</h2>
-          <h4>Корейский и английский</h4>
+          <h2>Борис</h2>
+          <h4>Arduino</h4>
         </div>
         
       </div>
       <div class="team-product">
         <div class = 'team-container'>
           <img class = 'team-img' src = {user}/>
-          <h2>Надежда Борисовна</h2>
-          <h4>Учитель начальных классов, логопед</h4>
+          <h2>Павел Аркадьевич</h2>
+          <h4>Scratch</h4>
         </div>
         
       </div>
       <div class="team-product">
         <div class = 'team-container'>
           <img class = 'team-img' src = {alex}/>
-          <h2>Alex S. Harris</h2>
-          <h4>Английский, носитель языка</h4>
+          <h2>Елена</h2>
+          <h4>Робототехника Lego</h4>
         </div>
         
       </div>
@@ -197,13 +197,13 @@ Code-R - это инновационная школа программирова
     </div>
    
  
-  
+  {/**  
     <div class = 'location' id = 'location'>
        <h2>Местоположение:</h2>
        <div class = 'location-div'> 
         </div>
     </div>
-
+ */}
    
        
         

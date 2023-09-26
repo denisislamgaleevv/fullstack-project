@@ -13,7 +13,7 @@ export const FormWindow = ({elem,  hideForm}) =>{
             <h1>{elem.title}</h1>
                 
                 <img width = '500px'src = {elem.image} />
-                <p>{elem.description}</p>
+                <p class = 'big-desc-form-p'>{elem.big_description}</p>
             </div>
         </div>
 

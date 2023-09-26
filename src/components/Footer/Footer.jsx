@@ -2,7 +2,7 @@
 import './Footer.css'
  
 import instIcon from '../../icons/inst.png'
-import logo from '../../images/header/logo.jpg'
+import logo from '../../images/header/logo.png'
 import tgIcon from '../../icons/tg.png'
 import vkIcon from '../../icons/vk.png'
 

@@ -1,11 +1,11 @@
 
 
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './TrialLesson.css'; 
 import axios from 'axios'
 export const TrialLesson = () =>{
-    
+    const [isPosted, setIsPosted] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -20,7 +20,6 @@ export const TrialLesson = () =>{
     }
      
     
-
  
     const sendData = async (e) => {
       e.preventDefault();
@@ -29,11 +28,12 @@ export const TrialLesson = () =>{
       const chatId = '1384687782';
       try {
         const response = await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-          
           chat_id: chatId,
           text: messageText,
         } );
-        console.log('Message sent:', response.data);
+        await console.log('Message sent:', response.data);
+        await setIsPosted(true)
+        console.log(isPosted)
       } catch (error) {
         console.error('Error sending message:', error);
       }
@@ -46,6 +46,12 @@ export const TrialLesson = () =>{
 
    
           <form class = 'contacts' id ="contact_us"  onSubmit = {  sendData } >
+
+            {isPosted? 
+            <div className='thanks-message-div'>  
+            <h1>Спасибо за отправку формы! Мы свяжемся с вами!</h1>
+            </div>
+            :  <>  
         <h1>Записаться на пробное занятие</h1>
         <div class = "contacts-text-container">  
         <p class="contacts-text">Оставьте заявку и мы свяжемся с вами</p>
@@ -95,7 +101,7 @@ export const TrialLesson = () =>{
         ></textarea>
       </div>
         <button class="btn" type = 'submit' >Отправить</button>
-       
+        </>}
       </form>
         
        

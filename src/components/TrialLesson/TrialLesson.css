@@ -7,6 +7,16 @@
     color: white;
     padding-bottom: 30px;
 }
+.thanks-message-div{
+    height: 80vh;
+    background: url('../../images/contacts/contacts.png');
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    color: white;
+    padding-bottom: 30px;
+}
 .contacts h1{
     padding-top: 50px;
     padding-bottom: 30px;

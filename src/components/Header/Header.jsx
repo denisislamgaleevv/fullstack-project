@@ -2,11 +2,11 @@ import './Header.css'
 //icons 
  
 import instIcon from '../../icons/inst.png'
-import logo from '../../images/header/logo.jpg'
+import logo from '../../images/header/logo.png'
 import tgIcon from '../../icons/tg.png'
 import vkIcon from '../../icons/vk.png'
 import { Context } from '../../index';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom"; 
 {/*
      <a class = 'header-a' href = "#about">О нас</a>
@@ -19,42 +19,61 @@ import { useNavigate } from "react-router-dom";
 
 export const Header = () =>{
   const navigate = useNavigate();
- 
   const {users} = useContext(Context)
+  const [miniMenuVis, setMiniMenuVis] = useState(false)
+ 
+  const showMenu = () =>{
+    setMiniMenuVis(true)
+  }
+  const hideMenu = () =>{
+    setMiniMenuVis(false)
+  }
+
     return(
+
+
+
         <div class="header">
+          
+              
             <div class="logo">
                 <a><img onClick= {() => navigate('/')}width = '100px' src = {logo}/></a>
             </div>
-            <div class = 'nav' id = "home">
+
+            {miniMenuVis || (window.innerWidth > 1300)?  
+            <div class = 'nav'  >
              <div class = 'header-a-div'>  
              <a class = 'header-a' onClick= {() => navigate('/')}>Главная</a>
              <a class = 'header-a' href = "/programs">Программы</a>
              <a class = 'header-a' href = "/trial-lessons">Бесплатный пробный урок</a>
+             {
+              miniMenuVis &&  <button className = 'button-reg-header' onClick = {() =>navigate("/register")}>Регистрация</button>
+               
+             }
              
-              
-              
            </div>
            
            </div>
-       
+           : <></> }
               
-             
-            <div onclick = 'viewMenu()' class = "burger" id = 'burger'>
-             <div class = "line"></div>
-             <div class = "line"></div>
-             <div class = "line"></div>
+           
             
-            </div>
-            <div class = 'cross' id = 'cross' onclick="hideMenu()">&#10006;</div>
-
-            {
+            {miniMenuVis ?  
+            <div class = 'cross'   onClick = { hideMenu }>&#10006;</div>
+              :<div onClick = { showMenu } class = "burger" id = 'burger'>
+              <div class = "line"></div>
+              <div class = "line"></div>
+              <div class = "line"></div>
+             
+             </div>}
+             { (window.innerWidth > 1300)?  <>   {
               users.loggedIn ? 
               <button className = 'button-reg-header' >Выйти</button>
          :
+         
          <button className = 'button-reg-header' onClick = {() =>navigate("/register")}>Регистрация</button>
          
-            }
+            }</>:<></>}
             
            </div>
            
