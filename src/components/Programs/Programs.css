@@ -1,0 +1,31 @@
+
+.services{
+    text-align: center;
+    background: #eee;
+    padding-top: 50px;
+}
+.services h2{
+    padding-bottom: 30px;
+    font-family: 'Open Sans';
+    font-size: 30px;
+    font-weight: bold;
+}
+.services-blocks{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    background: #eee;
+    overflow: hidden;
+    padding-bottom: 90px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.services-text-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+ 

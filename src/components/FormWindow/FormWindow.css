@@ -1,0 +1,36 @@
+
+
+.form-w-wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.675);
+    z-index: 500;
+}
+.form-w{
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    background-color: white;
+    z-index: 501;
+    
+}
+.cross-form{
+    width: 50px;
+    font-size: 50px;
+    padding: 30px;
+    margin-right: 30px;
+    float: right;
+    cursor: pointer;
+}
+.form-w h1{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}

@@ -1,0 +1,16 @@
+
+
+.button-reg-header{
+    
+    float: right;
+    padding: 0 16px;
+
+    color: #000000;
+    border: none;
+    border-radius: 3px;
+    background: #64bdd0;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 2em;
+    font-size: 20px;
+}

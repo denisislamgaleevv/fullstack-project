@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Denis",
+      "email": "denis.islamgaleevv@mail.ru",
+      "phone": "+79995890173",
+      "password": "www123"
+    },
+   
+    {
+      "username": "Tim",
+      "email": "tim@mail.ru",
+      "phone": "+79995890174",
+      "password": "www1234",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+.contacts{
+    background: url('../../images/contacts/contacts.png');
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    color: white;
+    padding-bottom: 30px;
+}
+.contacts h1{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: 'Open Sans';
+    font-size: 30px;
+}
+.contacts-text{
+    font-family: 'Open Sans';
+    font-size: 15px;
+    padding-left: 385px;
+    padding-right: 385px;
+ 
+}
+
+.contacts-text-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 60px;
+   
+}
