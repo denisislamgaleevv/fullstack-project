@@ -1,10 +1,11 @@
 import './Header.css'
 //icons 
  
-import instIcon from '../../icons/inst.png'
+ 
 import logo from '../../images/header/logo.png'
-import tgIcon from '../../icons/tg.png'
-import vkIcon from '../../icons/vk.png'
+import exit from '../../icons/exit.png'
+ 
+import profile from '../../icons/user.png'
 import { Context } from '../../index';
 import { useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom"; 
@@ -46,6 +47,7 @@ export const Header = () =>{
              <a class = 'header-a' onClick= {() => navigate('/')}>Главная</a>
              <a class = 'header-a' href = "/programs">Программы</a>
              <a class = 'header-a' href = "/trial-lessons">Бесплатный пробный урок</a>
+             <a class = 'header-a' href = "/reviews">Отзывы</a>
              {
               miniMenuVis &&  <button className = 'button-reg-header' onClick = {() =>navigate("/register")}>Регистрация</button>
                
@@ -68,7 +70,15 @@ export const Header = () =>{
              </div>}
              { (window.innerWidth > 1300)?  <>   {
               users.loggedIn ? 
-              <button className = 'button-reg-header' >Выйти</button>
+              <div className='profile-container'>
+                <img src ={profile} width='60px'/>
+                <div class = 'profile-text-c'>
+                  <b>Denis</b>
+                  <p>denis.islamgaleevv@mail.ru</p>
+                </div>
+                <img class = 'exit-icon' src = {exit} width='30px'/>
+              </div>
+              
          :
          
          <button className = 'button-reg-header' onClick = {() =>navigate("/register")}>Регистрация</button>

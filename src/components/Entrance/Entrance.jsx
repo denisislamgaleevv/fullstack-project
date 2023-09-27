@@ -3,16 +3,28 @@
 import './Entrance.css'
 import { useNavigate } from "react-router-dom";
 import { Context } from '../../index';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 export const Entrance = () =>{  
     const navigate = useNavigate();
     const {users} = useContext(Context)
-
-    const handleReg = () =>{
+    const [email,  setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    async function handleReg(e){
+        e.preventDefault()
         users.setLoggedIn(true);
-   
-        console.log(users)
+        const loginData = {
+            "email": email, 
+            "password": password
+        }
+       
 
+        const responce = await fetch('http://localhost:8000/users', {
+            method: "POST", 
+            body: JSON.stringify(loginData), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
     }
     return(
         <section class="profile">
@@ -30,8 +42,8 @@ export const Entrance = () =>{
                     id="profile-age"
                     placeholder="Ваш email"
                     data-validator="number"
-                    data-validator-min="0"
-                    data-validator-max="100"
+                    value={email}
+                    onChange={(e) => {setEmail(e.target.value)}}
             />
            
             <label for="profile-number">Пароль</label>
@@ -39,13 +51,14 @@ export const Entrance = () =>{
                 className='reg-input'
                     type = 'password'
                     name="number"
-                    id="profile-number"
+                    value = {password}
+                    onChange={(e) => {setPassword(e.target.value)}}
                     placeholder="Ваш пароль"
-                    data-validator="number"
+                 
             />
     
             <button className = 'button-reg'
-            onClick={ handleReg}
+            onClick={(e)=> handleReg(e)}
             >Сохранить</button>
             <p class = 'already-reg-p'>Нет аккаунта? <a class = 'open-a' onClick = {() => navigate("/register")}>Регистрация</a></p>
         </form>

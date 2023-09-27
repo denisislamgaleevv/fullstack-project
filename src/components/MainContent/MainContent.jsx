@@ -44,10 +44,10 @@ export function MainContent() {
     </div>
     <div class="main-text"  > 
     <p class="main-header">Школа программирования и робототехники Code-R</p>
-      <p class = "main-p">Здесь творчество встречается с технологиями </p>
+      <p class = "main-p">Здесь творчество сочетается с технологиями </p>
       <div class = 'main-btn-container'> 
       <a  href = "#about"><button class="btn"  >О нас</button></a>
-      <a  href = "#contact_us"><button class="btn">пробное занятие</button></a>
+      <a  href = "/trial-lessons"><button class="btn">пробное занятие</button></a>
     </div>
      
     </div>

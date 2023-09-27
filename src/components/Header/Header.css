@@ -14,3 +14,20 @@
     line-height: 2em;
     font-size: 20px;
 }
+
+.profile-container{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.exit-icon{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.profile-text-c{
+    text-align: left;
+    font-size: 20px;
+    padding-left: 20px;
+}

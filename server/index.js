@@ -49,7 +49,9 @@ server.use((req, res, next) => {
     if (req.path === '/users') {
         return next();
     }
-
+    if (req.path === '/reviews') {
+        return next();
+    }
     // для всех остальных маршрутов запрещаем
     if (!req.headers.authorization) {
         return res.status(403).json({ message: 'AUTH ERROR' });

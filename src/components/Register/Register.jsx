@@ -1,23 +1,29 @@
 
+import { useState } from 'react';
 import './Register.css'
 import { useNavigate } from "react-router-dom";
 export const Register = () =>{
+
+    const handleReg = (e) =>{
+        console.log(e.target)
+    }
+    const [email,  setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const navigate = useNavigate();
     return(<>
     <section class="profile">
     <h1>Регистрация</h1>
-    <form action="#" id="profile" class="form">
-        <p class="form__success-msg">Форма заполнена правильно</p>
-        <p class="form__error-msg">Форма содержит ошибки</p>
+    <form onSubmit = { handleReg} id="profile" class="form">
+       
 
         <label for="profile-name" >Имя <span class="required">*</span></label>
         <input
                 className='reg-input'
                 name="name"
-                id="profile-name"
+                
                 placeholder="Ваше имя"
                 data-required
-                data-validator="letters"
+               
         />
         <span class="form__comment">Только буквы (русские или английские)</span>
 
@@ -25,11 +31,9 @@ export const Register = () =>{
         <input
             className='reg-input'
                 name="email"
-                id="profile-age"
+               
                 placeholder="Ваш email"
-                data-validator="number"
-                data-validator-min="0"
-                data-validator-max="100"
+                data-required
         />
         <span class="form__comment">Число от 0 до 100</span>
 
@@ -54,7 +58,7 @@ export const Register = () =>{
                 data-validator="number"
         />
 
-        <button className = 'button-reg'>Сохранить</button>
+        <button className = 'button-reg' type = 'submit'>Сохранить</button>
         <p class = 'already-reg-p'>Уже зарегистрированы? <a class = 'open-a' onClick = {() => navigate("/entrance")}>Войти</a></p>
     </form>
 </section>
