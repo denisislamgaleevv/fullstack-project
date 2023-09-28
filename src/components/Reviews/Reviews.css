@@ -64,3 +64,25 @@
 .add-new-review-c h2{
     padding-top: 20px;
 }
+@media screen and (max-width: 1000px){
+    .Reviews{
+        display: flex;
+            
+        align-items: center;
+        justify-content: center;
+        padding: 5vh;
+        flex-direction: column;
+        }
+
+    .add-new-review-c{
+         width: 100%;
+         margin-right: 0;
+         margin-bottom: 20px;
+    }
+    .reviews-container{
+        width: 100%;
+        
+        height: 100vh;
+        overflow: auto
+    }
+}

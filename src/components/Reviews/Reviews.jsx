@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import './Reviews.css';
 import axios from 'axios';
 import moment from 'moment';
+import loading from '../../icons/loading.gif';
 export const Reviews = () => {
 const [reviews, setReviews] = useState([]);
- 
+
 
 useEffect(() => {
 getReviews();
@@ -92,12 +93,12 @@ return (
 </div>
      </div>
      <div className = 'reviews-container'>
-    {reviews.length === 0? <h1>Загрузка отзывов...</h1> 
+    {reviews.length === 0? <><h1>Загрузка отзывов...</h1><p>&nbsp;</p><img width = '60px'src = {loading}/>  </> 
 
 :<>  
     {reviews.slice(0).reverse().map((elem) => (
     <div className='review' key={elem.id}>
-    <h1>{elem.author}</h1>  
+    <h3>{elem.author}</h3>  
     <span>{elem.time}</span>
     <h1>{getStars(elem.stars)} </h1>
     <p>{elem.review}</p>
