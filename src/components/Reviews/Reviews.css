@@ -86,3 +86,11 @@
         overflow: auto
     }
 }
+
+.delete-rev-icon{
+     
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}

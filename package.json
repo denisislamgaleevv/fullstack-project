@@ -9,12 +9,17 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.2",
+    "concurrently": "^8.2.1",
+    "json-server-auth": "^2.1.0",
     "mobx": "^6.10.2",
+    "mobx-react-lite": "^4.0.5",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0",
+    "react-router-prompt": "^0.5.4",
     "react-scripts": "5.0.1",
     "save": "^2.9.0",
     "web-vitals": "^2.1.4"
@@ -24,8 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch ./server/db.json --port 3001",
-    "devserver": "nodemon ./server/index.js"
+    "server": "json-server-auth --watch ./server/db.json --port 3001",
+    "devserver": "nodemon ./server/index.js",
+    "dev": "concurrently \"npm run start\" \"npm run server\" \"npm run devserver\""
   },
   "eslintConfig": {
     "extends": [

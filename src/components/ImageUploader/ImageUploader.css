@@ -1,0 +1,49 @@
+
+
+
+
+.add-img-div{
+     
+    width: 220px;
+    height: 250px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial;
+      
+}
+.file-btn{
+    margin-top: 10px;
+    padding: 5px 15px  5px 15px;
+    border-radius: 5px;
+    border: 0;
+    background-color:  rgb(96, 165, 255);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.file-btn:hover{
+    background-color:   rgb(79, 137, 214);
+     
+}
+.add-img-div p{
+    
+    font-size: 14px;
+    font-weight:  700;
+}
+.feedback__file {
+    display: none;
+  }
+@media screen and (max-width: 800px){
+    .add-img-div{
+     
+        width: 120px;
+        height: 276px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        padding: 10px;
+        font-family: Arial;
+          
+    }
+    
+}

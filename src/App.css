@@ -485,7 +485,7 @@ html, body {
     padding-left: 1%;
     padding-right: 1%;
     padding-bottom: 2%;
-    cursor: pointer;
+     
 }
  
 .team-container h2{
@@ -994,4 +994,7 @@ html, body {
         padding-bottom: 0;
        
     }
+}
+.icon-div-footer-container h3{
+    padding-top: 10px;
 }

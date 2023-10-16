@@ -20,7 +20,7 @@ h1
 .reg-input
 {
     display: block;
-
+    width: 200px;
     margin-top: .2em;
     padding: 0 6px;
 
@@ -128,4 +128,19 @@ label
     text-decoration: underline;
     cursor: pointer;
      
+}
+.form-password{
+    position: relative;
+    display: flex;
+    width: 200px;
+}
+.form-eye{
+    position: absolute;
+    cursor: pointer;
+    left: 90%;
+     
+    height: 100%;
+    
+    transform: translateY(27%);
+    font-size:  20px;
 }

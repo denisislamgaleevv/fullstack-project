@@ -10,6 +10,7 @@ export const Programs = () =>{
     const [formVisibility, setFormVisibility] = useState(false)
  
     const [formElem, setFormElem]= useState([])
+    
     const viewForm = (elem) =>{
        setFormElem(elem)
        setFormVisibility(true)
@@ -26,8 +27,7 @@ export const Programs = () =>{
     };
 
     useEffect(()=>{
-        console.log(formVisibility)
-       
+        
         if (formVisibility) {
             window.addEventListener('scroll', handleScroll);
         } 

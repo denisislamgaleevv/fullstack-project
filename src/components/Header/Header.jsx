@@ -7,8 +7,10 @@ import exit from '../../icons/exit.png'
  
 import profile from '../../icons/user.png'
 import { Context } from '../../index';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"; 
+import { observer } from 'mobx-react-lite';
+ 
 {/*
      <a class = 'header-a' href = "#about">О нас</a>
             
@@ -18,25 +20,42 @@ import { useNavigate } from "react-router-dom";
              <a class = 'header-a' href = "#contact_us">Контакты</a>
 */}
 
-export const Header = () =>{
+const Header = observer(() =>{
   const navigate = useNavigate();
   const {users} = useContext(Context)
   const [miniMenuVis, setMiniMenuVis] = useState(false)
- 
+  const [update, setUpdate] = useState(false)
   const showMenu = () =>{
     setMiniMenuVis(true)
   }
   const hideMenu = () =>{
     setMiniMenuVis(false)
   }
-
+  
+  const hideProfile = () => {
+    navigate('/login')
+    localStorage.setItem('loggedIn', JSON.stringify(false));
+    setUpdate(false)
+    localStorage.setItem('username', '' )
+    localStorage.setItem('phone',  '')
+    localStorage.setItem('email',  '')
+    localStorage.setItem('image',  '')
+    
+    localStorage.setItem('loggedIn', '');
+    
+  }
+  useEffect(()=>{
+    setUpdate(true)
+  }, [update])
+ 
     return(
 
 
 
         <div class="header">
           
-              
+ 
+                  
             <div class="logo">
                 <a><img onClick= {() => navigate('/')}width = '100px' src = {logo}/></a>
             </div>
@@ -49,7 +68,8 @@ export const Header = () =>{
              <a class = 'header-a' href = "/trial-lessons">Бесплатный пробный урок</a>
              <a class = 'header-a' href = "/reviews">Отзывы</a>
              {
-              miniMenuVis &&  <button className = 'button-reg-header' onClick = {() =>navigate("/register")}>Регистрация</button>
+              miniMenuVis &&  <button className = 'button-reg-header' onClick = 
+              {() =>navigate("/register")}>Регистрация</button>
                
              }
              
@@ -69,14 +89,19 @@ export const Header = () =>{
              
              </div>}
              { (window.innerWidth > 1300)?  <>   {
-              users.loggedIn ? 
+               (localStorage.getItem('loggedIn') == 'true') ? 
               <div className='profile-container'>
-                <img src ={profile} width='60px'/>
-                <div class = 'profile-text-c'>
-                  <b>Denis</b>
-                  <p>denis.islamgaleevv@mail.ru</p>
+                <div className='profile-img-container'>  
+                <img className='profile-img' src = { localStorage.getItem('image')===JSON.stringify("none")?
+                 profile : localStorage.getItem('image').replace(/"/g, '')}/>
                 </div>
-                <img class = 'exit-icon' src = {exit} width='30px'/>
+                <div class = 'profile-text-c'>
+                  <b style = {{"cursor": "pointer"}} onClick = {() =>navigate('/lk')}>
+                    { localStorage.getItem('username').replace(/"/g, '')}</b>
+                  <p>{ localStorage.getItem('email').replace(/"/g, '')}</p>
+                </div>
+                <img class = 'exit-icon' src = {exit} width='30px'
+                 onClick = { hideProfile}/>
               </div>
               
          :
@@ -88,4 +113,5 @@ export const Header = () =>{
            </div>
            
            )
-}
+})
+export default Header;
